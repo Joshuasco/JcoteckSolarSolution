@@ -615,9 +615,10 @@
 // }
 
 "use client";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+// import { useEffect } from 'react';
 import Head from 'next/head';
-import Header from '@/component/Header';
+// import Header from '@/component/Header';
 import Hero from '@/component/Hero';
 import ProductCard from '@/component/Product';
 import ProductDetails from '@/component/ProductDetails';
@@ -726,9 +727,9 @@ const products: Product[] = [
 
 export default function SolarLanding() {
   const [cart, setCart] = useState<Product[]>([]);
-  const [showCart, setShowCart] = useState(false);
-  const [showNotification, setShowNotification] = useState(false);
-  const [notificationProgress, setNotificationProgress] = useState(100);
+  // const [showCart, setShowCart] = useState(false);
+  // const [showNotification, setShowNotification] = useState(false);
+  // const [notificationProgress, setNotificationProgress] = useState(100);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [showProductModal, setShowProductModal] = useState(false);
 
@@ -738,9 +739,9 @@ export default function SolarLanding() {
     setNotificationProgress(100);
   };
 
-  const removeFromCart = (productId: number) => {
-    setCart(cart.filter(item => item.id !== productId));
-  };
+  // const removeFromCart = (productId: number) => {
+  //   setCart(cart.filter(item => item.id !== productId));
+  // };
 
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);

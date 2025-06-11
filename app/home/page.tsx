@@ -93,15 +93,15 @@ export default function SalesFunnelPage() {
         <h2 className="text-3xl font-semibold mb-4">What Our Customers Say</h2>
         <div className="grid md:grid-cols-3 gap-4">
           <div className="p-4 bg-yellow-50 rounded shadow">
-            <p>"This solar generator powers my shop all day! No more fuel stress."</p>
+            <p>&quot;This solar generator powers my shop all day! No more fuel stress.&quot;</p>
             <Image src="https://picsum.photos/805/600" alt="Customer 1" width={300} height={200} className="rounded mt-2" />
           </div>
           <div className="p-4 bg-green-50 rounded shadow">
-            <p>"Very reliable for my laptop and fan, especially during power outages."</p>
+            <p>&quot;Very reliable for my laptop and fan, especially during power outages.&quot;</p>
             <Image src="https://picsum.photos/806/600" alt="Customer 2" width={300} height={200} className="rounded mt-2" />
           </div>
           <div className="p-4 bg-blue-50 rounded shadow">
-            <p>"Great value for money. Setup was super easy!"</p>
+            <p>&quot;Great value for money. Setup was super easy!&quot;</p>
             <Image src="https://picsum.photos/807/600" alt="Customer 3" width={300} height={200} className="rounded mt-2" />
           </div>
         </div>
