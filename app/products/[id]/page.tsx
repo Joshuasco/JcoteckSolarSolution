@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import ProductDetails from '@/component/ProductDetails';
-import { Product } from '@/types';
+import { Product, ProductDetailsProps } from '@/types';
+
 
 // Mock data - replace with actual data fetching
 const products: Product[] =  [
@@ -72,14 +73,28 @@ const products: Product[] =  [
   },
 ];
 
+// interface PageProps {
+//   params: { id: string }; // Not a Promise!
+// }
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const product = products.find(p => p.id === Number(params.id));
+// interface PageProps {
+//   params: id;
+// }
+
+export default function ProductDetailPage({ params }: { params: any }) {
+  // Convert id to number safely
+  const productId = Number(params.id);
+  
+  // Handle NaN case if id is not a valid number
+  if (isNaN(productId)) {
+    return notFound();
+  }
+
+  const product = products.find(p => p.id === productId);
   
   if (!product) {
     return notFound();
   }
-  
 
   const relatedProducts = products.filter(p => p.id !== product.id).slice(0, 2);
 
@@ -90,3 +105,58 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     />
   );
 }
+
+
+
+
+
+
+
+
+
+
+// interface PageProps {
+//   {params: id}
+// }
+
+// export default function ProductDetailPage({ params }: { params: any }) {
+//   const productId = Number(params.id);
+  
+//   if (isNaN(productId)) {
+//     notFound();
+//   }
+
+//   const product = products.find(p => p.id === productId);
+  
+//   if (!product) {
+//     notFound();
+//   }
+
+//   const relatedProducts = products.filter(p => p.id !== product.id).slice(0, 2);
+
+//   // Mock functions - replace with your actual handlers
+//   const handleAddToCart = (product: Product) => {
+//     console.log('Added to cart:', product);
+//     // Implement your cart logic here
+//   };
+
+//   const handleProductSelect = (product: Product) => {
+//     console.log('Product selected:', product);
+//     // Implement your product selection logic here
+//   };
+
+//   const handleClose = () => {
+//     console.log('Closing product details');
+//     // Implement your close logic here
+//   };
+
+//   return (
+//     <ProductDetails 
+//       product={product}
+//       relatedProducts={relatedProducts}
+//       onAddToCart={handleAddToCart}
+//       onProductSelect={handleProductSelect}
+//       onClose={handleClose}
+//     />
+//   );
+// }
