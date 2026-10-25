@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node api.js && next dev --turbopack --no-lint",
-    "build": "node api.js && next build --no-lint",
-    "start": "node api.js && next start",
+    "dev": "node init && next dev --turbopack --no-lint",
+    "build": "node init && next build --no-lint",
+    "start": "node init && next start",
     "lint": "echo 'Linting disabled'"
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
-    "next": "15.3.2",
+    "next": "15.5.28",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
